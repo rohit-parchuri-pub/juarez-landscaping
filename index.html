@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juarez Landscaping & Nursery — Landscape Design, Lawn Care & Hardscaping in Manchester, TN</title>
+  <meta name="description"
+    content="Juarez Landscaping & Nursery serves Manchester, TN and surrounding areas within 100 miles — landscape design, lawn care, hardscaping, and more. Request a free quote today.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============ Nav ============ -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <svg class="nav__logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#1f4d36"/>
+          <path d="M24 34C24 34 14 27.5 14 19.8C14 15.5 17.4 12 21.5 12C23.3 12 25 12.8 26 14.1C27 12.8 28.7 12 30.5 12C34.6 12 38 15.5 38 19.8C38 27.5 28 34 28 34" fill="none"/>
+          <path d="M24 36C15 30 10 24 10 18C10 12.9 14.5 9 19.6 9C21.9 9 24 10 24 10C24 10 26.1 9 28.4 9C33.5 9 38 12.9 38 18C38 24 33 30 24 36Z" fill="#c9922e" opacity="0.9"/>
+          <path d="M24 32V18" stroke="#1f4d36" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Juarez <span>Landscaping</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#service-area">Service Area</a></li>
+        <li><a href="#quote">Contact</a></li>
+      </ul>
+      <a href="#quote" class="btn btn--primary btn--sm nav__cta">Get a Free Quote</a>
+      <button class="nav__menu-btn" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- ============ Hero ============ -->
+  <section class="hero" id="home">
+    <div class="container hero__grid">
+      <div class="hero__content fade-in">
+        <div class="hero__badge">🌿 Serving Manchester, TN &amp; up to 100 miles around</div>
+        <h1 class="hero__title">Landscapes that make your property <span class="accent">unforgettable</span>.</h1>
+        <p class="hero__subtitle">From lush lawns to custom patios and garden designs, Juarez Landscaping &amp; Nursery brings your outdoor vision to life — with craftsmanship and care, project after project.</p>
+        <div class="hero__actions">
+          <a href="#quote" class="btn btn--primary">Request a Free Quote →</a>
+          <a href="#projects" class="btn btn--outline">View Our Work</a>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <div class="hero__stat-num">15+</div>
+            <div class="hero__stat-label">Years in Business</div>
+          </div>
+          <div>
+            <div class="hero__stat-num">100+</div>
+            <div class="hero__stat-label">Projects Completed</div>
+          </div>
+          <div>
+            <div class="hero__stat-num">100 mi</div>
+            <div class="hero__stat-label">Service Radius</div>
+          </div>
+          <div>
+            <div class="hero__stat-num">5★</div>
+            <div class="hero__stat-label">Customer Rated</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__art fade-in">
+        <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a landscaped garden with trees, hedges and a stone path">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#cfe8d8"/>
+              <stop offset="100%" stop-color="#f3efe4"/>
+            </linearGradient>
+            <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4f9c74"/>
+              <stop offset="100%" stop-color="#3a8562"/>
+            </linearGradient>
+            <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2d6a4f"/>
+              <stop offset="100%" stop-color="#1f4d36"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="500" fill="url(#sky)"/>
+          <circle cx="500" cy="90" r="46" fill="#c9922e" opacity="0.85"/>
+          <path d="M0 260 C 120 200 220 230 320 200 C 420 175 520 210 600 190 L600 500 L0 500 Z" fill="url(#hill1)"/>
+          <path d="M0 330 C 100 300 200 340 320 315 C 440 292 520 330 600 305 L600 500 L0 500 Z" fill="url(#hill2)"/>
+          <g transform="translate(90,235)"><circle r="34" fill="#3a8562"/><rect x="-5" y="30" width="10" height="34" fill="#8a5a2b"/></g>
+          <g transform="translate(150,255)"><circle r="24" fill="#4f9c74"/><rect x="-4" y="20" width="8" height="26" fill="#8a5a2b"/></g>
+          <g transform="translate(470,240)"><circle r="30" fill="#3a8562"/><rect x="-5" y="26" width="10" height="30" fill="#8a5a2b"/></g>
+          <path d="M240 500 C 260 420 300 400 320 500 Z" fill="#e3ddcd"/>
+          <path d="M320 500 C 340 430 380 420 400 500 Z" fill="#e3ddcd"/>
+          <ellipse cx="300" cy="360" rx="150" ry="18" fill="#1f4d36" opacity="0.15"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Trust bar ============ -->
+  <div class="trust-bar">
+    <div class="container trust-bar__inner">
+      <div class="trust-bar__item">✅ Licensed &amp; Insured</div>
+      <div class="trust-bar__item">🌱 Free On-Site Estimates</div>
+      <div class="trust-bar__item">🛠️ 15+ Years of Experience</div>
+      <div class="trust-bar__item">📍 Based in Manchester, TN</div>
+    </div>
+  </div>
+
+  <!-- ============ Services ============ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header section-header--center fade-in" style="margin-left:auto;margin-right:auto;">
+        <div class="section-label" style="justify-content:center;">What We Do</div>
+        <h2 class="section-title">Full-Service Landscaping, Start to Finish</h2>
+        <p class="section-subtitle">Whatever your property needs, our crew handles it with the same attention to detail — big project or small.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card fade-in">
+          <div class="card__icon">🌾</div>
+          <h3 class="card__title">Lawn Care &amp; Maintenance</h3>
+          <p class="card__text">Mowing, edging, fertilization, and seasonal cleanups to keep your lawn healthy year-round.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card__icon">🌳</div>
+          <h3 class="card__title">Landscape Design &amp; Installation</h3>
+          <p class="card__text">Custom planting beds, trees, shrubs, and full property makeovers designed around your style.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card__icon">🧱</div>
+          <h3 class="card__title">Hardscaping &amp; Patios</h3>
+          <p class="card__text">Paver patios, walkways, retaining walls, and fire pits built to last through every season.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card__icon">💧</div>
+          <h3 class="card__title">Irrigation Systems</h3>
+          <p class="card__text">Efficient sprinkler design, installation, and repair so your landscape stays green with less waste.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card__icon">🍂</div>
+          <h3 class="card__title">Mulching &amp; Bed Maintenance</h3>
+          <p class="card__text">Fresh mulch, weed control, and bed edging that keeps your landscaping crisp and tidy.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card__icon">🌲</div>
+          <h3 class="card__title">Tree &amp; Shrub Care</h3>
+          <p class="card__text">Pruning, trimming, and health treatments to keep mature trees and shrubs looking their best.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card__icon">🪴</div>
+          <h3 class="card__title">Nursery &amp; Plant Sourcing</h3>
+          <p class="card__text">Quality trees, shrubs, and plants sourced and selected to thrive in Middle Tennessee's climate.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card__icon">❄️</div>
+          <h3 class="card__title">Seasonal &amp; Storm Cleanup</h3>
+          <p class="card__text">Leaf removal, storm debris cleanup, and property prep for every season of the year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ About ============ -->
+  <section id="about" style="background:var(--cream-100);">
+    <div class="container about__grid">
+      <div class="about__portrait fade-in">
+        <svg viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder portrait illustration of the business owner">
+          <rect width="420" height="500" fill="#e6f2ea"/>
+          <circle cx="210" cy="190" r="95" fill="#4f9c74"/>
+          <circle cx="210" cy="170" r="55" fill="#faf8f3"/>
+          <path d="M120 420 C 120 320 300 320 300 420 L300 500 L120 500 Z" fill="#1f4d36"/>
+          <path d="M60 500 C 60 430 130 400 210 400 C 290 400 360 430 360 500 Z" fill="#2d6a4f"/>
+        </svg>
+      </div>
+      <div class="fade-in">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Rooted in Manchester, Growing Across Middle Tennessee</h2>
+        <p class="section-subtitle" style="margin-bottom:1.2rem;">
+          [Your story goes here] — Juarez Landscaping &amp; Nursery was founded on a simple idea: every property
+          deserves a landscape that's healthy, beautiful, and built to last. What started as a one-truck operation
+          in Manchester, TN has grown into a full-service landscaping team trusted by homeowners and businesses
+          across the region.
+        </p>
+        <p class="section-subtitle" style="margin-bottom:0;">
+          We treat every yard like it's our own — showing up on time, communicating clearly, and standing behind
+          our work.
+        </p>
+        <ul class="about__values">
+          <li>Locally owned and operated in Manchester, TN</li>
+          <li>Licensed, insured, and background-checked crews</li>
+          <li>Free, no-pressure on-site estimates</li>
+          <li>Serving properties up to 100 miles from Manchester</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Projects / Gallery ============ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header section-header--center fade-in" style="margin-left:auto;margin-right:auto;">
+        <div class="section-label" style="justify-content:center;">Our Work</div>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-subtitle">Real jobs from around Middle Tennessee, plus a few concept examples of work we do. <em>(Illustrated cards are placeholders until we add more real project photos.)</em></p>
+      </div>
+
+      <div class="filters fade-in">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="hardscape">Hardscaping</button>
+        <button class="filter-btn" data-filter="lawn">Lawn Care</button>
+        <button class="filter-btn" data-filter="design">Design &amp; Planting</button>
+        <button class="filter-btn" data-filter="maintenance">Property Maintenance</button>
+        <button class="filter-btn" data-filter="outdoor">Outdoor Living</button>
+      </div>
+
+      <div class="gallery">
+
+        <!-- Project: Patio planting bed (real photo) -->
+        <div class="project-card fade-in" data-category="design" data-title="Covered Patio Planting Bed"
+          data-loc="McMinnville, TN" data-desc="A fresh mulched planting bed along a covered patio, layered with ornamental grasses, boxwood, and arborvitae for year-round structure.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Design &amp; Planting</span>
+            <img src="images/patio-planting-bed.jpg" alt="Mulched planting bed with ornamental grasses and shrubs along a covered patio" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Covered Patio Planting Bed</h3>
+            <p class="project-card__loc">McMinnville, TN</p>
+          </div>
+        </div>
+
+        <!-- Project: Mulch bed refresh (real photo) -->
+        <div class="project-card fade-in" data-category="design" data-title="Fresh Mulch Bed Refresh"
+          data-loc="McMinnville, TN" data-desc="A clean, freshly mulched bed installed along the deck and home's foundation — sharp edges and even coverage from corner to corner.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Design &amp; Planting</span>
+            <img src="images/mulch-bed-refresh.jpg" alt="Freshly installed mulch bed along a deck and house foundation" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Fresh Mulch Bed Refresh</h3>
+            <p class="project-card__loc">McMinnville, TN</p>
+          </div>
+        </div>
+
+        <!-- Project: Evergreen row planting (real photo) -->
+        <div class="project-card fade-in" data-category="design" data-title="Evergreen Privacy Row Planting"
+          data-loc="McMinnville, TN" data-desc="A newly planted row of evergreens across an open field, set up to grow into a natural privacy screen with a Middle Tennessee ridge as the backdrop.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Design &amp; Planting</span>
+            <img src="images/evergreen-row-planting.jpg" alt="Newly planted row of evergreen trees across a large lawn with mountains in the background" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Evergreen Privacy Row Planting</h3>
+            <p class="project-card__loc">McMinnville, TN</p>
+          </div>
+        </div>
+
+        <!-- Project: Gutter cleanout (real photo) -->
+        <div class="project-card fade-in" data-category="maintenance" data-title="Gutter & Roof Cleanout"
+          data-loc="McMinnville, TN" data-desc="Seasonal gutter cleanout, clearing leaves and debris to keep water moving off the roof and away from the foundation.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Property Maintenance</span>
+            <img src="images/gutter-cleanout.jpg" alt="View down a cleaned roof gutter line onto the lawn below" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Gutter &amp; Roof Cleanout</h3>
+            <p class="project-card__loc">McMinnville, TN</p>
+          </div>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="project-card fade-in" data-category="hardscape" data-title="Paver Patio & Fire Pit"
+          data-loc="Manchester, TN" data-desc="A 400 sq ft paver patio with a custom stone fire pit and seating wall — designed for year-round outdoor entertaining.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Hardscaping</span>
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f3efe4"/><rect y="180" width="400" height="120" fill="#c9b998"/><g fill="#b7a582"><rect x="20" y="190" width="60" height="30"/><rect x="90" y="190" width="60" height="30"/><rect x="160" y="190" width="60" height="30"/><rect x="230" y="190" width="60" height="30"/><rect x="300" y="190" width="60" height="30"/><rect x="20" y="230" width="60" height="30"/><rect x="90" y="230" width="60" height="30"/><rect x="160" y="230" width="60" height="30"/><rect x="230" y="230" width="60" height="30"/><rect x="300" y="230" width="60" height="30"/></g><circle cx="200" cy="140" r="34" fill="#c9922e"/><circle cx="200" cy="140" r="18" fill="#e6b45a"/><rect x="70" y="150" width="260" height="14" fill="#8a7a5c"/></svg>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Paver Patio &amp; Fire Pit</h3>
+            <p class="project-card__loc">Manchester, TN</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card fade-in" data-category="lawn" data-title="Full Lawn Renovation"
+          data-loc="Tullahoma, TN" data-desc="Complete lawn renovation including aeration, overseeding, and a new fertilization program — transformed a patchy yard into a thick, healthy lawn.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Lawn Care</span>
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#eef6ee"/><rect y="120" width="400" height="180" fill="#4f9c74"/><path d="M0 120 C 100 100 300 140 400 110 L400 300 L0 300 Z" fill="#3a8562"/><rect x="80" y="60" width="10" height="40" fill="#8a5a2b"/><circle cx="85" cy="45" r="30" fill="#2d6a4f"/><rect x="290" y="70" width="10" height="30" fill="#8a5a2b"/><circle cx="295" cy="58" r="24" fill="#2d6a4f"/></svg>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Full Lawn Renovation</h3>
+            <p class="project-card__loc">Tullahoma, TN</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card fade-in" data-category="hardscape" data-title="Retaining Wall & Terrace"
+          data-loc="Murfreesboro, TN" data-desc="Engineered block retaining wall creating two level terraces on a sloped backyard, solving drainage issues and adding usable space.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Hardscaping</span>
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#eef6ee"/><path d="M0 300 L0 200 L400 140 L400 300 Z" fill="#4f9c74"/><g fill="#a8916d"><rect x="0" y="190" width="400" height="18"/><rect x="0" y="212" width="400" height="18"/></g><rect x="0" y="140" width="400" height="30" fill="#3a8562"/></svg>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Retaining Wall &amp; Terrace</h3>
+            <p class="project-card__loc">Murfreesboro, TN</p>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card fade-in" data-category="outdoor" data-title="Outdoor Kitchen & Pergola"
+          data-loc="Winchester, TN" data-desc="A custom cedar pergola paired with a built-in grill station and bar seating — extending the living space into the backyard.">
+          <div class="project-card__media">
+            <span class="project-card__tag">Outdoor Living</span>
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f3efe4"/><rect y="220" width="400" height="80" fill="#c9b998"/><g stroke="#8a5a2b" stroke-width="8"><line x1="60" y1="90" x2="60" y2="220"/><line x1="340" y1="90" x2="340" y2="220"/></g><rect x="40" y="80" width="320" height="16" fill="#8a5a2b"/><g stroke="#8a5a2b" stroke-width="6"><line x1="80" y1="80" x2="80" y2="60"/><line x1="140" y1="80" x2="140" y2="60"/><line x1="200" y1="80" x2="200" y2="60"/><line x1="260" y1="80" x2="260" y2="60"/><line x1="320" y1="80" x2="320" y2="60"/></g><rect x="150" y="230" width="100" height="50" fill="#2d6a4f"/></svg>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Outdoor Kitchen &amp; Pergola</h3>
+            <p class="project-card__loc">Winchester, TN</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" data-lightbox-close>
+    <button class="lightbox__close" data-lightbox-close aria-label="Close">✕</button>
+    <div class="lightbox__box">
+      <div class="lightbox__media" id="lightbox-media"></div>
+      <div class="lightbox__body">
+        <h3 id="lightbox-title" style="margin-bottom:0.3rem;"></h3>
+        <p id="lightbox-loc" style="color:var(--ink-500);font-size:0.9rem;margin-bottom:0.9rem;"></p>
+        <p id="lightbox-desc" style="color:var(--ink-700);"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Service Area ============ -->
+  <section id="service-area" style="background:var(--cream-100);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Where We Work</div>
+        <h2 class="section-title">Proudly Serving Manchester, TN &amp; Beyond</h2>
+        <p class="section-subtitle">We travel up to 100 miles from our home base in Manchester, TN to take on landscaping projects of all sizes.</p>
+      </div>
+      <div class="area__grid">
+        <div id="service-map" class="fade-in"></div>
+        <div class="fade-in">
+          <h3 style="margin-bottom:1rem;">Cities &amp; Regions We Cover</h3>
+          <ul class="area__list">
+            <li>Manchester <span>Home base</span></li>
+            <li>Tullahoma <span>~15 mi</span></li>
+            <li>Shelbyville <span>~25 mi</span></li>
+            <li>Winchester <span>~25 mi</span></li>
+            <li>McMinnville <span>~25 mi</span></li>
+            <li>Murfreesboro <span>~40 mi</span></li>
+            <li>Cookeville <span>~45 mi</span></li>
+            <li>Nashville <span>~70 mi</span></li>
+            <li>Chattanooga <span>~85 mi</span></li>
+            <li>Huntsville, AL <span>~95 mi</span></li>
+          </ul>
+          <p class="area__note">📍 Not seeing your town? We may still be able to help — distances are approximate and we
+            evaluate larger projects outside our standard radius on a case-by-case basis. Contact us to confirm
+            availability at your address.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Quote / Contact ============ -->
+  <section id="quote" class="quote-section">
+    <div class="container">
+      <div class="quote__grid">
+        <div class="fade-in">
+          <div class="section-label">Get Started</div>
+          <h2 class="section-title">Request Your Free Quote</h2>
+          <p class="section-subtitle" style="margin-bottom:2.2rem;">Tell us about your project or service need and
+            we'll get back to you to schedule a free on-site estimate.</p>
+
+          <div class="quote__info-item">
+            <div class="quote__info-icon">📞</div>
+            <div>
+              <div class="quote__info-title">Call or Text</div>
+              <div class="quote__info-text"><a href="tel:+19313044839" style="color:inherit;">+1 (931) 304-4839</a></div>
+            </div>
+          </div>
+          <div class="quote__info-item">
+            <div class="quote__info-icon">✉️</div>
+            <div>
+              <div class="quote__info-title">Email</div>
+              <div class="quote__info-text"><a href="mailto:marinojuarez1984@gmail.com" style="color:inherit;">marinojuarez1984@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="quote__info-item">
+            <div class="quote__info-icon">📍</div>
+            <div>
+              <div class="quote__info-title">Based In</div>
+              <div class="quote__info-text">Manchester, TN — serving up to 100 miles around</div>
+            </div>
+          </div>
+          <div class="quote__info-item">
+            <div class="quote__info-icon">🕒</div>
+            <div>
+              <div class="quote__info-title">Hours</div>
+              <div class="quote__info-text">Mon–Sat, 7:00 AM – 6:00 PM</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card fade-in">
+          <form id="quote-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="address">Property Address / City</label>
+                <input type="text" id="address" name="address" autocomplete="address-level2">
+              </div>
+            </div>
+
+            <div class="field">
+              <label>What do you need help with?</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Lawn Care & Maintenance"> Lawn Care &amp; Maintenance</label>
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Landscape Design & Installation"> Landscape Design &amp; Installation</label>
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Hardscaping & Patios"> Hardscaping &amp; Patios</label>
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Irrigation Systems"> Irrigation Systems</label>
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Mulching & Bed Maintenance"> Mulching &amp; Bed Maintenance</label>
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Tree & Shrub Care"> Tree &amp; Shrub Care</label>
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Seasonal Cleanup"> Seasonal Cleanup</label>
+                <label class="checkbox-item"><input type="checkbox" name="service" value="Other"> Other</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your project, property size, or timeline..."></textarea>
+            </div>
+
+            <div class="field">
+              <label>Preferred Contact Method</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item"><input type="radio" name="contact-method" value="Phone" checked> Phone</label>
+                <label class="checkbox-item"><input type="radio" name="contact-method" value="Email"> Email</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--gold btn--block">Send Quote Request →</button>
+            <p class="form-note">Submitting opens your email app with your request pre-filled, ready to send to our team.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo">Juarez Landscaping &amp; Nursery</div>
+        <div class="footer__links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#service-area">Service Area</a>
+          <a href="#quote">Get a Quote</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span id="year"></span> Juarez Landscaping &amp; Nursery. All rights reserved.</span>
+        <span>Manchester, TN · Serving up to 100 miles around</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
